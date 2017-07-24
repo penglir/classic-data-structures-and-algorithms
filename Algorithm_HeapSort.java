@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class HeapSort { // O(nlog(n))
+public class Algorithm_HeapSort { // O(nlog(n))
     public static void heapSort(int[] arr) {
         // build heap
         buildHeap(arr); // O(n)

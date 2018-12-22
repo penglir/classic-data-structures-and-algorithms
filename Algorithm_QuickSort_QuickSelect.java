@@ -20,6 +20,7 @@ public class Algorithm_QuickSort_QuickSelect {
     // Time : Worst O(n^2) -> Shuffle -> Average O(n)
     // Space : O(1)
     public static int quickselect(int[] arr, int k) {
+        shuffle(arr);
         k = arr.length - k;
         return quickselect(arr, k, 0, arr.length - 1);
     }
@@ -46,11 +47,20 @@ public class Algorithm_QuickSort_QuickSelect {
        swap(arr, ++i, high);
        return i;
     }
+
     public static void swap(int[] arr, int i, int j) {
         int t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
     }
+
+    private static void shuffle(int[] nums) {
+        Random random = new Random();
+        for (int i = 0; i < nums.length; i++) {
+            swap(nums, i, random.nextInt(nums.length));
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr1 = {30,20,10,50,60,40};
         quicksort(arr1);

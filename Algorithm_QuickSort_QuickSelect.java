@@ -35,7 +35,20 @@ public class Algorithm_QuickSort_QuickSelect {
         }
         return arr[k];
     }
-
+    public static int quickselect_iterative(int[] arr, int k, int low, int high) {
+        while (low < high) {
+            int pivot = partition(arr, low, high);
+            if (pivot < k) {
+                low = pivot + 1;
+            } else if (pivot > k) {
+                high = pivot - 1;
+            } else {
+                break;
+            }
+        }
+        return arr[k];
+    }
+    
     public static int partition(int[] arr, int low, int high) {
        int pivot = arr[high];
        int i = low - 1;
